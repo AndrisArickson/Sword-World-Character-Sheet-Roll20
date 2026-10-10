@@ -183,6 +183,7 @@
                     <label>Race</label>
                     <input type="text" spellcheck="false" list="race" name="attr_race" />
                     <datalist id="race">
+                        <!-- Common races -->
                         <option>Human</option>
                         <option>Elf</option>
                         <option>Dwarf</option>
@@ -200,21 +201,42 @@
                         <option>Meria</option>
                         <option>Tiens</option>
                         <option>Leprechaun</option>
+                        <!-- Rare races (Fey, Magitech Angel, Sentian, Valkyrie, Merman Weakling: 2.0) -->
+                        <option>Abyssborn</option>
                         <option>Alv</option>
+                        <option>Dark Dwarf</option>
+                        <option>Fey</option>
+                        <option>Fluorite</option>
+                        <option>Magitech Angel</option>
+                        <option>Miakis</option>
+                        <option>Newman</option>
+                        <option>Sentian</option>
+                        <option>Shadow</option>
+                        <option>Soleil</option>
+                        <option>Spriggan</option>
+                        <option>Valkyrie</option>
                         <option>Garuda Weakling</option>
                         <option>Tannoz Weakling</option>
                         <option>Basilisk Weakling</option>
                         <option>Minotaur Weakling</option>
-                        <option>Shadow</option>
-                        <option>Soleil</option>
-                        <option>Abyssborn</option>
-                        <option>Dark Dwarf</option>
-                        <option>Fluorite</option>
-                        <option>Newman</option>
-                        <option>Spriggan</option>
-                        <option>Fey</option>
-                        <option>Miakis</option>
-                        <option>Valkyrie</option>
+                        <option>Merman Weakling</option>
+                        <!-- Barbarous races (Dhampir, Lamia, Lizardman, Lycanthrope, Vulcan: 2.0) -->
+                        <option>Arbor</option>
+                        <option>Baba Yaga</option>
+                        <option>Basilisk</option>
+                        <option>Broken Drake</option>
+                        <option>Centaur</option>
+                        <option>Dark Troll</option>
+                        <option>Dawn</option>
+                        <option>Dhampir</option>
+                        <option>Diablo</option>
+                        <option>Drake</option>
+                        <option>Kobold</option>
+                        <option>Lamia</option>
+                        <option>Lizardman</option>
+                        <option>Lycanthrope</option>
+                        <option>Scissorscorpion</option>
+                        <option>Vulcan</option>
                     </datalist>
 
                     <label>Age</label>
@@ -3287,10 +3309,12 @@
 
     on("sheet:opened change:character_name change:repeating_weapons change:repeating_powertable", actionCallUpdate);
 
-    const race_icons = ["abyssborn", "alv", "basilisk-weakling", "dark-dwarf", "dwarf", "elf", "fey", "fluorite",
-        "garuda-weakling", "grassrunner", "human", "leprechaun", "lildraken", "lykant", "meria", "miakis",
-        "minotaur-weakling", "newman", "nightmare", "runefolk", "shadow", "soleil", "spriggan", "tabbit",
-        "tannoz-weakling", "tiens", "valkyrie"];
+    const race_icons = ["human", "elf", "dwarf", "tabbit", "runefolk", "nightmare", "lykant", "lildraken",
+        "grassrunner", "meria", "tiens", "leprechaun", "abyssborn", "alv", "dark-dwarf", "fey", "fluorite",
+        "magitech-angel", "miakis", "newman", "sentian", "shadow", "soleil", "spriggan", "valkyrie",
+        "garuda-weakling", "tannoz-weakling", "basilisk-weakling", "minotaur-weakling", "merman-weakling",
+        "arbor", "baba-yaga", "basilisk", "broken-drake", "centaur", "dark-troll", "dawn", "dhampir",
+        "diablo", "drake", "kobold", "lamia", "lizardman", "lycanthrope", "scissorscorpion", "vulcan"];
 
     on("sheet:opened change:race", function() {
         getAttrs(["race", "race_icon"], function(values) {
