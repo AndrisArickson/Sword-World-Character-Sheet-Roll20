@@ -2290,3 +2290,63 @@ body .charsheet .race-row .race-icon {
 .charsheet .cls-mystic:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/icons/class-mystic.webp'); }
 .charsheet .cls-runesmith:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/icons/class-runesmith.webp'); }
 .charsheet .cls-aristocrat:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/icons/class-aristocrat.webp'); }
+
+/* temporary ability bonus / penalty, shown under the score */
+body .charsheet .temp-note {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-size: 10px;
+    font-weight: bold;
+    line-height: 11px;
+    text-align: center;
+    color: #4b0082;
+    pointer-events: none;
+}
+body .charsheet .temp-note:after {
+    content: ' temp';
+    font-weight: normal;
+}
+.charsheet .grid .editable .editbox.multi.inline {
+    padding: 1px 6px 1px 22px;
+    gap: 1px;
+    align-content: center;
+}
+.charsheet .grid .editable .editbox.multi.inline:before {
+    content: none;
+}
+.charsheet .grid .editable .editbox.multi.inline .bonus-row {
+    grid-template-columns: 52px 40px;
+    gap: 4px;
+}
+.charsheet .grid .editable .editbox.multi.inline .bonus-row * {
+    height: 16px;
+    line-height: 16px;
+    font-size: 10px;
+}
+.charsheet .grid .editable .editbox .bonus-row.temp span {
+    color: #4b0082;
+    font-weight: bold;
+}
+
+/* movement enhancements: extra lines and total */
+body .charsheet .move-enh .repcontainer {
+    gap: 0;
+}
+body .charsheet .move-enh .move-enh-total {
+    text-align: right;
+    font-size: 10px;
+    padding-right: 10px;
+}
+body .charsheet .move-enh .repitem > div.col2 {
+    grid-template-columns: 4fr 1fr;
+    padding: 0 10px;
+}
+body .charsheet .move-enh .repitem > div.col2 div:last-child input {
+    text-align: center;
+}
+body .charsheet .move-enh .repitem > div.col2 div:last-child:before {
+    content: '+';
+    margin: -5px;
+}

@@ -39,5 +39,14 @@ the repository is **public** and the files are on `main`.
 
   The roll uses one 2d6 and posts two results to chat: `Knowledge XX` and `Weakness XX`. With no weakness bonus the two numbers match. A natural 12 still counts as an automatic success (+5) for both. When a weakness bonus is set, the sheet also shows `Weakness XX` under the Monster Knowledge value.
 - **Initiative**: the bonus is included in the Initiative roll.
+- **Technique, Movement, Observation and Knowledge** (check packages on page 1): the bonus is included in their value and roll.
 - **Base Accuracy** and **Extra Damage**: the bonus is shown on page 2 and added to every weapon's Total Accuracy and Total Extra Damage.
 - **Limited Move**: the default of 3 is replaced by Normal Move ÷ 6, rounded down, plus the bonus.
+
+**Temporary ability modifiers.** Each ability score's pencil now opens two fields:
+- **+ Bonus**: the existing permanent adjustment.
+- **± Temp**: a temporary bonus or penalty.
+
+The temporary amount is added to the score, so it also changes the modifier and everything calculated from it. It shows in deep purple under the score (for example `+2 temp` or `-1 temp`). It disappears when set back to 0.
+
+**Movement Enhancements** can have extra lines (use **+Add**), for example boots on one line and a spell on another. The first line and every extra line are added together. The total, shown at the bottom of the box, is added to Normal Move, and Full Move and Limited Move follow it.

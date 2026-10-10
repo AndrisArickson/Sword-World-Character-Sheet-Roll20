@@ -261,8 +261,9 @@
                 <div class="grid editable">
                     <input class="editmode" type="hidden" name="attr_dexterity_edit" value="0" />
                     <input type="checkbox" name="attr_dexterity_edit" value="1" />
-                    <div class="editbox">
-                        <input type="number" name="attr_dexterity_mod" value="0" />
+                    <div class="editbox multi inline">
+                        <div class="bonus-row"><span>+ Bonus</span><input type="number" name="attr_dexterity_mod" value="0" /></div>
+                        <div class="bonus-row temp"><span>&plusmn; Temp</span><input type="number" name="attr_dexterity_temp" value="0" /></div>
                     </div>
                     <label>Dexterity</label>
                     <input type="hidden" name="attr_dexterity" />
@@ -271,6 +272,8 @@
                         <input class="toggle-modifier" type="hidden" name="attr_dexterity_mod" value="0" />
                         <span name="attr_dexterity_mod" />
                     </span>
+                    <input class="toggle-bonus" type="hidden" name="attr_dexterity_temp" value="0" />
+                    <span class="temp-note" name="attr_dexterity_temp_label" />
                 </div>
                 <div class="grid">
                     <label>&divide;6</label>
@@ -289,8 +292,9 @@
                 <div class="grid editable">
                     <input class="editmode" type="hidden" name="attr_agility_edit" value="0" />
                     <input type="checkbox" name="attr_agility_edit" value="1" />
-                    <div class="editbox">
-                        <input type="number" name="attr_agility_mod" value="0" />
+                    <div class="editbox multi inline">
+                        <div class="bonus-row"><span>+ Bonus</span><input type="number" name="attr_agility_mod" value="0" /></div>
+                        <div class="bonus-row temp"><span>&plusmn; Temp</span><input type="number" name="attr_agility_temp" value="0" /></div>
                     </div>
                     <label>Agility</label>
                     <input type="hidden" name="attr_agility" />
@@ -299,6 +303,8 @@
                         <input class="toggle-modifier" type="hidden" name="attr_agility_mod" value="0" />
                         <span name="attr_agility_mod" />
                     </span>
+                    <input class="toggle-bonus" type="hidden" name="attr_agility_temp" value="0" />
+                    <span class="temp-note" name="attr_agility_temp_label" />
                 </div>
                 <div class="grid">
                     <label>&divide;6</label>
@@ -321,8 +327,9 @@
                 <div class="grid editable">
                     <input class="editmode" type="hidden" name="attr_strength_edit" value="0" />
                     <input type="checkbox" name="attr_strength_edit" value="1" />
-                    <div class="editbox">
-                        <input type="number" name="attr_strength_mod" value="0" />
+                    <div class="editbox multi inline">
+                        <div class="bonus-row"><span>+ Bonus</span><input type="number" name="attr_strength_mod" value="0" /></div>
+                        <div class="bonus-row temp"><span>&plusmn; Temp</span><input type="number" name="attr_strength_temp" value="0" /></div>
                     </div>
                     <label>Strength</label>
                     <input type="hidden" name="attr_strength" />
@@ -331,6 +338,8 @@
                         <input class="toggle-modifier" type="hidden" name="attr_strength_mod" value="0" />
                         <span name="attr_strength_mod" />
                     </span>
+                    <input class="toggle-bonus" type="hidden" name="attr_strength_temp" value="0" />
+                    <span class="temp-note" name="attr_strength_temp_label" />
                 </div>
                 <div class="grid">
                     <label>&divide;6</label>
@@ -349,8 +358,9 @@
                 <div class="grid editable">
                     <input class="editmode" type="hidden" name="attr_vitality_edit" value="0" />
                     <input type="checkbox" name="attr_vitality_edit" value="1" />
-                    <div class="editbox">
-                        <input type="number" name="attr_vitality_mod" value="0" />
+                    <div class="editbox multi inline">
+                        <div class="bonus-row"><span>+ Bonus</span><input type="number" name="attr_vitality_mod" value="0" /></div>
+                        <div class="bonus-row temp"><span>&plusmn; Temp</span><input type="number" name="attr_vitality_temp" value="0" /></div>
                     </div>
                     <label>Vitality</label>
                     <input type="hidden" name="attr_vitality" />
@@ -359,6 +369,8 @@
                         <input class="toggle-modifier" type="hidden" name="attr_vitality_mod" value="0" />
                         <span name="attr_vitality_mod" />
                     </span>
+                    <input class="toggle-bonus" type="hidden" name="attr_vitality_temp" value="0" />
+                    <span class="temp-note" name="attr_vitality_temp_label" />
                 </div>
                 <div class="grid">
                     <label>&divide;6</label>
@@ -381,8 +393,9 @@
                 <div class="grid editable">
                     <input class="editmode" type="hidden" name="attr_intelligence_edit" value="0" />
                     <input type="checkbox" name="attr_intelligence_edit" value="1" />
-                    <div class="editbox">
-                        <input type="number" name="attr_intelligence_mod" value="0" />
+                    <div class="editbox multi inline">
+                        <div class="bonus-row"><span>+ Bonus</span><input type="number" name="attr_intelligence_mod" value="0" /></div>
+                        <div class="bonus-row temp"><span>&plusmn; Temp</span><input type="number" name="attr_intelligence_temp" value="0" /></div>
                     </div>
                     <label>Intelligence</label>
                     <input type="hidden" name="attr_intelligence" />
@@ -391,6 +404,8 @@
                         <input class="toggle-modifier" type="hidden" name="attr_intelligence_mod" value="0" />
                         <span name="attr_intelligence_mod" />
                     </span>
+                    <input class="toggle-bonus" type="hidden" name="attr_intelligence_temp" value="0" />
+                    <span class="temp-note" name="attr_intelligence_temp_label" />
                 </div>
                 <div class="grid">
                     <label>&divide;6</label>
@@ -409,8 +424,9 @@
                 <div class="grid editable">
                     <input class="editmode" type="hidden" name="attr_spirit_edit" value="0" />
                     <input type="checkbox" name="attr_spirit_edit" value="1" />
-                    <div class="editbox">
-                        <input type="number" name="attr_spirit_mod" value="0" />
+                    <div class="editbox multi inline">
+                        <div class="bonus-row"><span>+ Bonus</span><input type="number" name="attr_spirit_mod" value="0" /></div>
+                        <div class="bonus-row temp"><span>&plusmn; Temp</span><input type="number" name="attr_spirit_temp" value="0" /></div>
                     </div>
                     <label>Spirit</label>
                     <input type="hidden" name="attr_spirit" />
@@ -419,6 +435,8 @@
                         <input class="toggle-modifier" type="hidden" name="attr_spirit_mod" value="0" />
                         <span name="attr_spirit_mod" />
                     </span>
+                    <input class="toggle-bonus" type="hidden" name="attr_spirit_temp" value="0" />
+                    <span class="temp-note" name="attr_spirit_temp_label" />
                 </div>
                 <div class="grid">
                     <label>&divide;6</label>
@@ -578,7 +596,12 @@
 
                 <div class="grid col2 span2">
                     <div>Dexterity Modifier</div>
-                    <div class="grid">
+                    <div class="grid editable">
+                        <input class="editmode" type="hidden" name="attr_technique_edit" value="0" />
+                        <input type="checkbox" name="attr_technique_edit" value="1" />
+                        <div class="editbox">
+                            <input type="number" name="attr_technique_mod" value="0" />
+                        </div>
                         <button class="input lrg" type="roll" name="roll_technique"
                             value="&{template:swskill} @{roll_template_token} {{reroll=[Reroll](~technique)}} {{name=@{character_name}}} {{skill=Technique}} {{class=@{technique_class}}} {{level=@{technique_class_level}}} {{ability=Dexterity}} {{modifier=@{dexterity_modifier}}} {{result=[[[[2d6]]+@{technique}]]}} {{raw=$[[0]]}} {{result2=[[[[12+5]]+@{technique}]]}}" />
                         <label>Technique</label>
@@ -586,10 +609,17 @@
                         <input type="hidden" name="attr_technique_class_level" />
                         <input type="hidden" name="attr_technique" />
                         <span class="input lrg" name="attr_technique" />
+                        <input class="toggle-bonus" type="hidden" name="attr_technique_mod" value="0" />
+                        <span class="bonus-note" name="attr_technique_mod" />
                     </div>
 
                     <div>Agility Modifier</div>
-                    <div class="grid">
+                    <div class="grid editable">
+                        <input class="editmode" type="hidden" name="attr_movement_edit" value="0" />
+                        <input type="checkbox" name="attr_movement_edit" value="1" />
+                        <div class="editbox">
+                            <input type="number" name="attr_movement_mod" value="0" />
+                        </div>
                         <button class="input lrg" type="roll" name="roll_movement"
                             value="&{template:swskill} @{roll_template_token} {{reroll=[Reroll](~movement)}} {{name=@{character_name}}} {{skill=Movement}} {{class=@{movement_class}}} {{level=@{movement_class_level}}} {{ability=Agility}} {{modifier=@{agility_modifier}}} {{result=[[[[2d6]]+@{movement}]]}} {{raw=$[[0]]}} {{result2=[[[[12+5]]+@{movement}]]}}" />
                         <label>Movement</label>
@@ -597,10 +627,17 @@
                         <input type="hidden" name="attr_movement_class_level" />
                         <input type="hidden" name="attr_movement" />
                         <span class="input lrg" name="attr_movement" />
+                        <input class="toggle-bonus" type="hidden" name="attr_movement_mod" value="0" />
+                        <span class="bonus-note" name="attr_movement_mod" />
                     </div>
 
                     <div>Intelligence Modifier</div>
-                    <div class="grid">
+                    <div class="grid editable">
+                        <input class="editmode" type="hidden" name="attr_observation_edit" value="0" />
+                        <input type="checkbox" name="attr_observation_edit" value="1" />
+                        <div class="editbox">
+                            <input type="number" name="attr_observation_mod" value="0" />
+                        </div>
                         <button class="input lrg" type="roll" name="roll_observation"
                             value="&{template:swskill} @{roll_template_token} {{reroll=[Reroll](~observation)}} {{name=@{character_name}}} {{skill=Observation}} {{class=@{observation_class}}} {{level=@{observation_class_level}}} {{ability=Intelligence}} {{modifier=@{intelligence_modifier}}} {{result=[[[[2d6]]+@{observation}]]}} {{raw=$[[0]]}} {{result2=[[[[12+5]]+@{observation}]]}}" />
                         <label>Observation</label>
@@ -608,6 +645,8 @@
                         <input type="hidden" name="attr_observation_class_level" />
                         <input type="hidden" name="attr_observation" />
                         <span class="input lrg" name="attr_observation" />
+                        <input class="toggle-bonus" type="hidden" name="attr_observation_mod" value="0" />
+                        <span class="bonus-note" name="attr_observation_mod" />
                     </div>
                 </div>
 
@@ -623,7 +662,12 @@
 
                 <div class="grid col2 span2">
                     <div>Intelligence Modifier</div>
-                    <div class="grid">
+                    <div class="grid editable">
+                        <input class="editmode" type="hidden" name="attr_knowledge_edit" value="0" />
+                        <input type="checkbox" name="attr_knowledge_edit" value="1" />
+                        <div class="editbox">
+                            <input type="number" name="attr_knowledge_mod" value="0" />
+                        </div>
                         <button class="input lrg" type="roll" name="roll_knowledge"
                             value="&{template:swskill} @{roll_template_token} {{reroll=[Reroll](~knowledge)}} {{name=@{character_name}}} {{skill=Knowledge}} {{class=@{knowledge_class}}} {{level=@{knowledge_class_level}}} {{ability=Intelligence}} {{modifier=@{intelligence_modifier}}} {{result=[[[[2d6]]+@{knowledge}]]}} {{raw=$[[0]]}} {{result2=[[[[12+5]]+@{knowledge}]]}}" />
                         <label>Knowledge</label>
@@ -631,6 +675,8 @@
                         <input type="hidden" name="attr_knowledge_class_level" />
                         <input type="hidden" name="attr_knowledge" />
                         <span class="input lrg" name="attr_knowledge" />
+                        <input class="toggle-bonus" type="hidden" name="attr_knowledge_mod" value="0" />
+                        <span class="bonus-note" name="attr_knowledge_mod" />
                     </div>
                 </div>
             </div>
@@ -826,12 +872,19 @@
             </div>
         </div>
 
-        <div class="grid boxstat nogap">
+        <div class="grid boxstat nogap move-enh">
             <label>Movement Enhancements</label>
             <div class="grid col2">
                 <div><input type="text" spellcheck="false" name="attr_movement_enhancements" /></div>
                 <div><input type="number" name="attr_movement_enhancements_modifier" /></div>
             </div>
+            <fieldset class="repeating_moveenh">
+                <div class="grid col2">
+                    <div><input type="text" spellcheck="false" name="attr_moveenh_name" placeholder="Boots, spell..." /></div>
+                    <div><input type="number" name="attr_moveenh_value" value="0" /></div>
+                </div>
+            </fieldset>
+            <div class="move-enh-total">Total <span name="attr_movement_enhancements_total"></span></div>
         </div>
     </div>
 
@@ -2404,12 +2457,14 @@
     const modifier_list = ability_list.map(i => i + "_mod")
         .concat(["hp_mod","mp_mod","fortitude_mod","willpower_mod"])
         .concat(["monster_knowledge_mod","monster_knowledge_weakness_mod","initiative_mod",
-            "base_accuracy_mod","extra_damage_mod"]);
+            "base_accuracy_mod","extra_damage_mod",
+            "technique_mod","movement_mod","observation_mod","knowledge_mod"]);
     const total_list = base_list
         .concat(ability_list.map(i => i + "_mod"))
+        .concat(ability_list.map(i => i + "_temp"))
         .concat(correction_list.map(i => "ability_" + i))
         .concat(growth_list.map(i => "growth_" + i))
-        .concat(["movement_enhancements_modifier","limited_move_mod"]);
+        .concat(["movement_enhancements_total","limited_move_mod"]);
 // class data
     const class_data = {
         "fighter": "Fighter",
@@ -2591,7 +2646,7 @@
         getAttrs(total_list, function(values) {
             let update = {};
             let counter = 0;
-            let move_mod = parseInt(values["movement_enhancements_modifier"])||0;
+            let move_mod = parseInt(values["movement_enhancements_total"])||0;
             let limited_mod = parseInt(values["limited_move_mod"])||0;
             base_list.forEach(base => {
                 let base_value = parseInt(values[`${base}`])||0;
@@ -2602,8 +2657,10 @@
                     let growth_value = parseInt(values[`growth_${growth}`])||0;
                     let ability = ability_list[counter];
                     let mod = parseInt(values[`${ability}_mod`])||0;
+                    let temp = parseInt(values[`${ability}_temp`])||0;
                     let rawscore = base_value + correction_value + growth_value;
-                    let score = rawscore + mod;
+                    let score = rawscore + mod + temp;
+                    update[`${ability}_temp_label`] = temp > 0 ? `+${temp}` : temp < 0 ? `${temp}` : "";
                     let modifier = Math.floor(score / 6);
                     update[`${ability}`] = score;
                     update[`${ability}_raw`] = rawscore;
@@ -3250,6 +3307,18 @@
               destination and fields both can be a single attribute: 'weight'
               or an array of attributes: ['weight','number','equipped']
     */
+    // Movement Enhancements: the first line plus every extra line, added to Normal Move.
+    const sumMoveEnhancements = function() {
+        getSectionIDs("repeating_moveenh", function(ids) {
+            getAttrs(["movement_enhancements_modifier"].concat(ids.map(id => `repeating_moveenh_${id}_moveenh_value`)), function(values) {
+                let total = parseInt(values["movement_enhancements_modifier"])||0;
+                ids.forEach(id => total += parseInt(values[`repeating_moveenh_${id}_moveenh_value`])||0);
+                setAttrs({movement_enhancements_total: total});
+            });
+        });
+    };
+    on("sheet:opened change:movement_enhancements_modifier change:repeating_moveenh:moveenh_value remove:repeating_moveenh", sumMoveEnhancements);
+
     const repeatingSum = (destinations, section, fields) => {
         if (!Array.isArray(destinations)) destinations = [destinations.replace(/\s/g, '').split(',')];
         if (!Array.isArray(fields)) fields = [fields.replace(/\s/g, '').split(',')];
