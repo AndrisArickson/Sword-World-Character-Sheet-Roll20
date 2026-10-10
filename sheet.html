@@ -746,7 +746,9 @@
                     <div class="bonus-row"><span>+ Knowledge</span><input type="number" name="attr_monster_knowledge_mod" value="0" /></div>
                     <div class="bonus-row"><span>+ Weakness</span><input type="number" name="attr_monster_knowledge_weakness_mod" value="0" /></div>
                 </div>
-                <button class="input lrg" type="action" name="act_monster_knowledge" />
+                <button class="input lrg" type="roll" name="roll_monster_knowledge" value="@{monster_knowledge_action}" />
+                <button class="hidden" type="action" name="act_monster_knowledge-action" />
+                <input type="hidden" name="attr_monster_knowledge_action" value="" />
                 <label class="refmark">Monster Knowledge</label>
                 <input type="hidden" name="attr_monster_knowledge_class" />
                 <input type="hidden" name="attr_monster_knowledge_class_level" />
@@ -853,6 +855,7 @@
                 <span class="input" name="attr_base_accuracy" />
                 <input class="toggle-bonus" type="hidden" name="attr_base_accuracy_mod" value="0" />
                 <span class="bonus-note" name="attr_base_accuracy_mod" />
+                <input class="stat-note" type="text" spellcheck="false" name="attr_base_accuracy_note" placeholder="Accuracy notes, e.g. +1 from ring" />
             </div>
 
             <div>Strength Modifier</div>
@@ -869,6 +872,7 @@
                 <span class="input" name="attr_extra_damage" />
                 <input class="toggle-bonus" type="hidden" name="attr_extra_damage_mod" value="0" />
                 <span class="bonus-note" name="attr_extra_damage_mod" />
+                <input class="stat-note" type="text" spellcheck="false" name="attr_extra_damage_note" placeholder="Damage notes, e.g. +2 from Strength spell" />
             </div>
         </div>
 
@@ -918,7 +922,14 @@
             <input type="hidden" name="attr_weapon_total_accuracy" />
             <input type="hidden" name="attr_weapon_total_extra_damage" />
 
-            <div><input type="text" spellcheck="false" name="attr_weapon_name" placeholder="Weapon" /></div>
+            <div class="weapon-name">
+                <input type="text" spellcheck="false" name="attr_weapon_name" placeholder="Weapon" />
+                <div class="weapon-note">
+                    <input type="text" spellcheck="false" name="attr_weapon_note" placeholder="Notes" />
+                    <label title="Add these notes to this weapon's attack and damage rolls"><input type="checkbox" name="attr_weapon_note_show" value="1" /><span>in roll</span></label>
+                </div>
+                <input type="hidden" name="attr_weapon_note_roll" value="" />
+            </div>
             <div>
                 <select class="input" name="attr_weapon_class">
                     <option value=""></option>
@@ -951,7 +962,7 @@
             <div><input type="number" name="attr_weapon_accuracy" value="" /></div>
             <div>
                 <button class="input" type="roll" name="roll_attack"
-                    value="&{template:swskill} @{roll_template_token} {{reroll=[Reroll](~repeating_weapons_attack)}} {{damage=[Damage](~repeating_weapons_damage)}} {{name=@{character_name}}} {{skill=@{weapon_name}}} {{skillverb=attacks with}} {{result=[[[[2d6]]+@{weapon_total_accuracy}]]}} {{raw=$[[0]]}} {{result2=[[[[12+5]]+@{weapon_total_accuracy}]]}}" />
+                    value="&{template:swskill} @{roll_template_token} {{reroll=[Reroll](~repeating_weapons_attack)}} {{damage=[Damage](~repeating_weapons_damage)}} {{name=@{character_name}}} {{skill=@{weapon_name}}} {{skillverb=attacks with}} {{result=[[[[2d6]]+@{weapon_total_accuracy}]]}} {{raw=$[[0]]}} {{result2=[[[[12+5]]+@{weapon_total_accuracy}]]}} @{weapon_note_roll}" />
                 <span class="input" name="attr_weapon_total_accuracy" />
             </div>
             <div><input type="number" name="attr_weapon_power" /></div>
@@ -2947,9 +2958,21 @@
         });
     });
 
+    // Weapon notes: when "in roll" is ticked, the note is added to the weapon's attack and damage rolls.
+    const noteChunk = function(note, show) {
+        note = (note || "").trim();
+        if (!(parseInt(show)||0) || !note) return "";
+        return `{{note=${note.replace(/[\[\]{}|@%&?]/g, c => "&#" + c.charCodeAt(0) + ";")}}}`;
+    };
+    on("change:repeating_weapons:weapon_note change:repeating_weapons:weapon_note_show", function() {
+        getAttrs(["repeating_weapons_weapon_note","repeating_weapons_weapon_note_show"], function(values) {
+            setAttrs({repeating_weapons_weapon_note_roll: noteChunk(values["repeating_weapons_weapon_note"], values["repeating_weapons_weapon_note_show"])}, {silent: true});
+        });
+    });
+
     // Monster Knowledge rolls one 2d6 and reports two results: Knowledge, and
     // Weakness (Knowledge plus the separate weakness-detection bonus).
-    on("clicked:monster_knowledge", function() {
+    on("clicked:monster_knowledge-action", function() {
         getAttrs(["monster_knowledge","monster_knowledge_weakness_mod"], function(values) {
             if (values["monster_knowledge"] === "" || values["monster_knowledge"] === undefined) return;
             const knowledge = parseInt(values["monster_knowledge"])||0;
@@ -3100,7 +3123,8 @@
                     `repeating_${trigger}_weapon_power_10`,`repeating_${trigger}_weapon_power_11`,
                     `repeating_${trigger}_weapon_power_12`,`repeating_${trigger}_weapon_name`,
                     `repeating_${trigger}_weapon_total_extra_damage`,
-                    `repeating_${trigger}_weapon_crit_value`], function(values) {
+                    `repeating_${trigger}_weapon_crit_value`,
+                    `repeating_${trigger}_weapon_note`,`repeating_${trigger}_weapon_note_show`], function(values) {
                 let key = eventInfo[`sourceAttribute`];
                 key = key.replace(`repeating_${trigger}_`,``).replace(`_damage-action`,``);
                 let name = values[`repeating_${trigger}_weapon_name`];
@@ -3121,7 +3145,7 @@
                 let power11 = values[`repeating_${trigger}_weapon_power_11`];
                 let power12 = values[`repeating_${trigger}_weapon_power_12`];
 
-                startRoll(`&{template:swdamage} @{roll_template_token} {{reroll=[Reroll](~repeating_${trigger}_${key}_damage)}} {{name=@{character_name}}} {{skill=${name}}} {{power=${power}}} {{extra=[[0+${extra}]]}} {{crit=[[0+${crit}]]}} {{power3=${power3}}} {{power4=${power4}}} {{power5=${power5}}} {{power6=${power6}}} {{power7=${power7}}} {{power8=${power8}}} {{power9=${power9}}} {{power10=${power10}}} {{power11=${power11}}} {{power12=${power12}}} {{result=[[2d6]]}}`, (results) => {
+                startRoll(`&{template:swdamage} @{roll_template_token} {{reroll=[Reroll](~repeating_${trigger}_${key}_damage)}} {{name=@{character_name}}} {{skill=${name}}} {{power=${power}}} {{extra=[[0+${extra}]]}} {{crit=[[0+${crit}]]}} {{power3=${power3}}} {{power4=${power4}}} {{power5=${power5}}} {{power6=${power6}}} {{power7=${power7}}} {{power8=${power8}}} {{power9=${power9}}} {{power10=${power10}}} {{power11=${power11}}} {{power12=${power12}}} {{result=[[2d6]]}} ${noteChunk(values[`repeating_${trigger}_weapon_note`], values[`repeating_${trigger}_weapon_note_show`])}`, (results) => {
                     const roll = results.results.result.result;
                     const extra_r = results.results.extra.result;
                     const crit_r = results.results.crit.result;
@@ -3268,7 +3292,7 @@
     const action_refs = ["power0_action","power5_action","power10_action",
         "power15_action","power20_action","power25_action","power30_action",
         "power35_action","power40_action","power45_action","power50_action",
-        "class_action", "roll_action"]; // non-repeating buttons
+        "class_action", "roll_action", "monster_knowledge_action"]; // non-repeating buttons
     const actionCallUpdate = function() {
         getAllAttrs(["character_name", ...action_refs], repeating_sections, (attributes, sections) => {
             let actions = Object.keys(attributes).filter((key) => key !== "character_name");
@@ -3574,6 +3598,7 @@
             {{/fellow}}
             {{reroll}}
         </div>
+        {{#note}}<p class="note">{{note}}</p>{{/note}}
         {{#raw}}<p class="refmark">2d: {{raw}}</p>{{/raw}}
     </div>
 </rolltemplate>
@@ -3761,6 +3786,7 @@
             <p class="fail">(except after a critical)</p>
         {{/rollTotal() result 2}}
         <div class="fumble"></div>
+        {{#note}}<p class="note">{{note}}</p>{{/note}}
         <div class="options">
             {{reroll}}
         </div>
