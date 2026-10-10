@@ -2256,41 +2256,42 @@ body .charsheet .race-row .race-icon {
 .charsheet .class-icon:before {
     content: '';
     display: inline-block;
-    width: 18px;
-    height: 18px;
-    margin-right: 5px;
-    vertical-align: -4px;
+    width: 20px;
+    height: 20px;
+    margin: 0 5px 0 2px;
+    vertical-align: top;
     background-size: contain;
+    background-repeat: no-repeat;
 }
-.charsheet .cls-fighter:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/icons/class-fighter.webp'); }
-.charsheet .cls-grappler:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/icons/class-grappler.webp'); }
-.charsheet .cls-battle-dancer:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/icons/class-battle-dancer.webp'); }
-.charsheet .cls-fencer:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/icons/class-fencer.webp'); }
-.charsheet .cls-marksman:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/icons/class-marksman.webp'); }
-.charsheet .cls-sorcerer:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/icons/class-sorcerer.webp'); }
-.charsheet .cls-conjurer:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/icons/class-conjurer.webp'); }
-.charsheet .cls-priest:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/icons/class-priest.webp'); }
-.charsheet .cls-artificer:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/icons/class-artificer.webp'); }
-.charsheet .cls-fairy-tamer:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/icons/class-fairy-tamer.webp'); }
-.charsheet .cls-druid:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/icons/class-druid.webp'); }
-.charsheet .cls-daemonologist:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/icons/class-daemonologist.webp'); }
-.charsheet .cls-abyss-gazer:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/icons/class-abyss-gazer.webp'); }
-.charsheet .cls-bibliomancer:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/icons/class-bibliomancer.webp'); }
-.charsheet .cls-scout:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/icons/class-scout.webp'); }
-.charsheet .cls-ranger:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/icons/class-ranger.webp'); }
-.charsheet .cls-sage:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/icons/class-sage.webp'); }
-.charsheet .cls-enhancer:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/icons/class-enhancer.webp'); }
-.charsheet .cls-bard:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/icons/class-bard.webp'); }
-.charsheet .cls-rider:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/icons/class-rider.webp'); }
-.charsheet .cls-alchemist:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/icons/class-alchemist.webp'); }
-.charsheet .cls-geomancer:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/icons/class-geomancer.webp'); }
-.charsheet .cls-tactician:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/icons/class-tactician.webp'); }
-.charsheet .cls-dark-hunter:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/icons/class-dark-hunter.webp'); }
-.charsheet .cls-arcanist:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/icons/class-arcanist.webp'); }
-.charsheet .cls-heritor:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/icons/class-heritor.webp'); }
-.charsheet .cls-mystic:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/icons/class-mystic.webp'); }
-.charsheet .cls-runesmith:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/icons/class-runesmith.webp'); }
-.charsheet .cls-aristocrat:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/icons/class-aristocrat.webp'); }
+.charsheet .cls-fighter:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/class-icons/class-fighter.webp'); }
+.charsheet .cls-grappler:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/class-icons/class-grappler.webp'); }
+.charsheet .cls-battle-dancer:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/class-icons/class-battle-dancer.webp'); }
+.charsheet .cls-fencer:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/class-icons/class-fencer.webp'); }
+.charsheet .cls-marksman:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/class-icons/class-marksman.webp'); }
+.charsheet .cls-sorcerer:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/class-icons/class-sorcerer.webp'); }
+.charsheet .cls-conjurer:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/class-icons/class-conjurer.webp'); }
+.charsheet .cls-priest:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/class-icons/class-priest.webp'); }
+.charsheet .cls-artificer:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/class-icons/class-artificer.webp'); }
+.charsheet .cls-fairy-tamer:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/class-icons/class-fairy-tamer.webp'); }
+.charsheet .cls-druid:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/class-icons/class-druid.webp'); }
+.charsheet .cls-daemonologist:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/class-icons/class-daemonologist.webp'); }
+.charsheet .cls-abyss-gazer:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/class-icons/class-abyss-gazer.webp'); }
+.charsheet .cls-bibliomancer:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/class-icons/class-bibliomancer.webp'); }
+.charsheet .cls-scout:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/class-icons/class-scout.webp'); }
+.charsheet .cls-ranger:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/class-icons/class-ranger.webp'); }
+.charsheet .cls-sage:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/class-icons/class-sage.webp'); }
+.charsheet .cls-enhancer:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/class-icons/class-enhancer.webp'); }
+.charsheet .cls-bard:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/class-icons/class-bard.webp'); }
+.charsheet .cls-rider:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/class-icons/class-rider.webp'); }
+.charsheet .cls-alchemist:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/class-icons/class-alchemist.webp'); }
+.charsheet .cls-geomancer:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/class-icons/class-geomancer.webp'); }
+.charsheet .cls-tactician:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/class-icons/class-tactician.webp'); }
+.charsheet .cls-dark-hunter:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/class-icons/class-dark-hunter.webp'); }
+.charsheet .cls-arcanist:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/class-icons/class-arcanist.webp'); }
+.charsheet .cls-heritor:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/class-icons/class-heritor.webp'); }
+.charsheet .cls-mystic:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/class-icons/class-mystic.webp'); }
+.charsheet .cls-runesmith:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/class-icons/class-runesmith.webp'); }
+.charsheet .cls-aristocrat:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/class-icons/class-aristocrat.webp'); }
 
 /* temporary ability bonus / penalty, shown under the score */
 body .charsheet .temp-note {

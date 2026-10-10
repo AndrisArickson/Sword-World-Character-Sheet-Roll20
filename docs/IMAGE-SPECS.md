@@ -81,3 +81,7 @@ All images are in `images/` as WebP. The source art was made in Google Flow and 
 | `icons/class-*.webp`, `icons/race-*.webp` | 256 x 256 | 29 classes and 27 races, round bronze-rimmed portraits cut from the Spirit Maze class and race art; Nightmare variants share `race-nightmare.webp`. Class icons show at 18 px beside each class name; the race portrait shows at 64 px beside the Race field, picked by a sheet worker that writes the `race_icon` attribute |
 
 Frame thickness was raised to show more of the new corner art: the guild box border is 30 px (was 20) and the chat roll-card border is 26 px (was 20).
+
+## Class icons (10 Oct 2026)
+
+The class list uses bold emblem icons from `images/class-icons/` (29 files, 256 x 256, shown at 20 px), coloured by class type: crimson for warrior classes, sapphire for wizard classes, bronze for the rest. The earlier class portraits stay in `images/icons/` for other uses.

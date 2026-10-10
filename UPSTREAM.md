@@ -47,7 +47,7 @@ upstream's change on top of it.
 | Art loaded from this repo (WebP) | – | the 4 `url(...)` lines; `border-image` slice 130 |
 | Thicker frames, parchment background | – | `.guild`, `.guild:before`, roll-template `.sheet-container` border, `body .charsheet` background |
 | Race portrait | `race-row` wrapper around the Race field; `race_icons` worker | `/* ===== Art ... */` block at the end |
-| Class icons | `class-icon cls-…` classes on the class-list labels | `.cls-…:before` rules at the end |
+| Class icons | `class-icon cls-…` classes on the class-list labels | `.cls-…:before` rules at the end (images in `images/class-icons/`) |
 | Dividers | five `<div class="divider">` | `.divider` |
 | Permanent bonuses (Monster Knowledge, Initiative, Technique, Movement, Observation, Knowledge, Base Accuracy, Extra Damage, Limited Move) | `editable` wrappers with `*_mod` inputs; `modifier_list`; package calculation; weapon totals (both calculation paths) | `toggle-bonus`, `bonus-note`, `.box + div .editable` overrides |
 | Limited Move = Normal Move ÷ 6 + bonus | `triggerAbility` | – |
