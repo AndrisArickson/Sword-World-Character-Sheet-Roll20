@@ -10,6 +10,8 @@ repository, imported unchanged at commit
 Original authors: Robert Burson (robert-b), Chris Casey (miriable).
 That repository is MIT-licensed (Copyright (c) 2014-2018 Roll20); the licence text is in [LICENSE](LICENSE).
 
+To check for and merge updates to the original sheet, see [UPSTREAM.md](UPSTREAM.md).
+
 ## Files
 | File | Purpose |
 | --- | --- |

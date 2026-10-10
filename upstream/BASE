@@ -1,0 +1,7 @@
+# The upstream sheet this fork is built on. tools/upstream.sh reads and updates this file.
+UPSTREAM_REPO=https://github.com/Roll20/roll20-character-sheets.git
+UPSTREAM_PATH=Sword World
+# Last upstream commit that changed the Sword World folder and is merged into this fork.
+BASE_COMMIT=98e72f101a54286b3b3ce7098f992876183a7027
+BASE_DATE=2026-03-25
+UPSTREAM_VERSION=0.177.2

@@ -1,0 +1,48 @@
+# Once a week, check whether the original Roll20 "Sword World" sheet has changed.
+# If it has, open an issue (only one at a time) listing the upstream changes.
+# To stop it, delete this file or disable the workflow in the Actions tab.
+name: Watch upstream sheet
+
+on:
+  schedule:
+    - cron: "17 6 * * 1"   # Mondays 06:17 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Compare with upstream
+        id: check
+        run: |
+          set +e
+          tools/upstream.sh check > report.txt 2>&1
+          code=$?
+          cat report.txt
+          if [ "$code" -eq 10 ]; then echo "changed=true" >> "$GITHUB_OUTPUT";
+          elif [ "$code" -ne 0 ]; then exit "$code"; fi
+
+      - name: Open an issue
+        if: steps.check.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh label create upstream-update --color 5319e7 --description "The original Roll20 sheet has changed" --force
+          open=$(gh issue list --label upstream-update --state open --json number --jq length)
+          if [ "$open" -gt 0 ]; then echo "An upstream-update issue is already open."; exit 0; fi
+          {
+            echo "The original Roll20 Sword World sheet has changed since this fork's base."
+            echo
+            echo '```'
+            cat report.txt
+            echo '```'
+            echo
+            echo "To merge: run \`tools/upstream.sh merge\`, resolve any conflicts, then commit. See UPSTREAM.md."
+          } > body.md
+          gh issue create --title "Upstream Sword World sheet has updates" --label upstream-update --body-file body.md
