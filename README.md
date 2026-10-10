@@ -24,7 +24,9 @@ In a game's **Settings → Game Settings → Character Sheet Template**, choose
 **Custom** (requires a Pro subscription), then paste `sheet.html` into the
 HTML tab and `sheet.css` into the CSS tab.
 
-## Known quirks
-`sheet.css` loads its images from
-`raw.githubusercontent.com/coyotegrey/roll20-character-sheets/sword-world-dev/...`,
-a third-party fork, not from this repository. If that fork goes away the art will break.
+## Images
+`sheet.css` loads its art straight from this repository's `main` branch:
+`https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/<file>`.
+
+Roll20 fetches those URLs from the players' browsers, so they only work when
+the repository is **public** and the files are on `main`.
