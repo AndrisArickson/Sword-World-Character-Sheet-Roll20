@@ -50,5 +50,3 @@ the repository is **public** and the files are on `main`.
 The temporary amount is added to the score, so it also changes the modifier and everything calculated from it. It shows in deep purple under the score (for example `+2 temp` or `-1 temp`). It disappears when set back to 0.
 
 **Movement Enhancements** can have extra lines (use **+Add**), for example boots on one line and a spell on another. The first line and every extra line are added together. The total, shown at the bottom of the box, is added to Normal Move, and Full Move and Limited Move follow it.
-
-**Weapon notes.** Each weapon row has a **Notes** line under the weapon name. Tick **in roll** to add that note to the weapon's attack and damage rolls in chat (for example `Silver: +2 dmg vs undead`). Untick it to keep the note on the sheet only.
