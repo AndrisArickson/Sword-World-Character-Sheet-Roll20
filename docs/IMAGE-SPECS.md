@@ -78,6 +78,6 @@ All images are in `images/` as WebP. The source art was made in Google Flow and 
 | `border2.webp` | 476 x 476 | Gold acanthus corners with a dark outline for dark chat; slice 130 |
 | `parchment.webp` | 1024 x 1024 | Seamless, subtle; the sheet background (`body .charsheet`) |
 | `divider.webp` | 2400 x 120 | Ink filigree divider; `.divider` between sections on pages 1 and 2 |
-| `icons/class-*.webp`, `icons/race-*.webp` | 256 x 256 | 24 classes and 27 races, round bronze-rimmed portraits cut from the Spirit Maze class and race art; Nightmare variants share `race-nightmare.webp`. Class icons show at 18 px beside each class name; the race portrait shows at 64 px beside the Race field, picked by a sheet worker that writes the `race_icon` attribute |
+| `icons/class-*.webp`, `icons/race-*.webp` | 256 x 256 | 29 classes and 27 races, round bronze-rimmed portraits cut from the Spirit Maze class and race art; Nightmare variants share `race-nightmare.webp`. Class icons show at 18 px beside each class name; the race portrait shows at 64 px beside the Race field, picked by a sheet worker that writes the `race_icon` attribute |
 
 Frame thickness was raised to show more of the new corner art: the guild box border is 30 px (was 20) and the chat roll-card border is 26 px (was 20).

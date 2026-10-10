@@ -2211,3 +2211,8 @@ body .charsheet .race-row .race-icon {
 .charsheet .cls-geomancer:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/icons/class-geomancer.webp'); }
 .charsheet .cls-tactician:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/icons/class-tactician.webp'); }
 .charsheet .cls-dark-hunter:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/icons/class-dark-hunter.webp'); }
+.charsheet .cls-arcanist:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/icons/class-arcanist.webp'); }
+.charsheet .cls-heritor:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/icons/class-heritor.webp'); }
+.charsheet .cls-mystic:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/icons/class-mystic.webp'); }
+.charsheet .cls-runesmith:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/icons/class-runesmith.webp'); }
+.charsheet .cls-aristocrat:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/icons/class-aristocrat.webp'); }
