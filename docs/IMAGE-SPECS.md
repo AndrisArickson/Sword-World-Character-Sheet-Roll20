@@ -65,3 +65,17 @@ If you want them, these can be added to the CSS:
 - `parchment.webp`: a subtle, tileable paper texture for the sheet background (512 x 512, seamless).
 - `divider.webp`: a horizontal ornament for between sections (1200 x 60).
 - Class or race icons (e.g. Fighter, Sorcerer, Priest): 128 x 128 each, one consistent style.
+
+## Delivered (10 Oct 2026)
+
+All images are in `images/` as WebP. The source art was made in Google Flow and assembled in Python; the scripts are in `SwordWorld/Claude/sheet-art/` (`assemble.py`, `icons.py`, `preview.py`). The old PNGs were moved to `Images/_replaced/roll20-sheet/`.
+
+| File | Size | Notes |
+|---|---|---|
+| `logo.webp` | 820 x 1024 | Crest with crossed sword and staff and "SW 2.5" ribbon, anchored top-left |
+| `border.webp` | 390 x 390 | Black ink scroll corners, plain double-line edges; `sheet.css` slice changed to 130 |
+| `circle.webp` | 600 x 600 | Ink double ring with scrollwork; solid light centre about 65% of the width |
+| `border2.webp` | 476 x 476 | Gold acanthus corners with a dark outline for dark chat; slice 130 |
+| `parchment.webp` | 1024 x 1024 | Seamless, subtle (not used by the CSS yet) |
+| `divider.webp` | 2400 x 120 | Ink filigree divider (not used by the CSS yet) |
+| `icons/class-*.webp`, `icons/race-*.webp` | 256 x 256 | 24 classes and 27 races, round bronze-rimmed portraits cut from the Spirit Maze class and race art; Nightmare variants share `race-nightmare.webp` (not used by the CSS yet) |

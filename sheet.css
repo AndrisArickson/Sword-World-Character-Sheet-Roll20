@@ -30,7 +30,7 @@ body .charsheet sub {
 }
 
 .charsheet h1 {
-    background: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/logo.png') left top no-repeat;
+    background: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/logo.webp') left top no-repeat;
     background-size: contain;
     display: block;
     width: 100%;
@@ -654,7 +654,7 @@ body .charsheet .monster div:not(.repcontrol) > button:hover:before,
     position: relative;
     border: 20px solid transparent;
     padding: 10px;
-    border-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/border.png') 65 stretch;
+    border-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/border.webp') 130 stretch;
 }
 .page1 .guild:before {
     content: '';
@@ -679,7 +679,7 @@ body .charsheet .guild .alevel .input {
     position: absolute;
     right: -25px;
     bottom: -25px;
-    background: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/circle.png') center center no-repeat;
+    background: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/circle.webp') center center no-repeat;
     background-size: contain;
     border: none;
     width: 120px;
@@ -1899,7 +1899,7 @@ body .charsheet .fellow .grid.lined .grid > div > * {
 .sheet-rolltemplate-swdamage .sheet-container,
 .sheet-rolltemplate-swinfo .sheet-container {
     border: 20px solid transparent;
-    border-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/border2.png') 65 stretch;
+    border-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/border2.webp') 130 stretch;
     display: grid;
     grid-template-columns: 1fr;
     gap: 10px;
