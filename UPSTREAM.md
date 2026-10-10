@@ -56,3 +56,4 @@ upstream's change on top of it.
 | Multi-line Movement Enhancements | `repeating_moveenh`; `sumMoveEnhancements` worker; `movement_enhancements_total` | `.move-enh` |
 | Base Accuracy / Extra Damage notes | `*_note` inputs | `input.stat-note` |
 | Credits | – (`sheet.json` authors and instructions) | – |
+| Parchment behind everything; video avatars hidden | – | `/* ===== Parchment everywhere` block at the end (overrides only) |

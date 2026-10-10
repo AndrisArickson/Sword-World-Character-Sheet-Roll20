@@ -52,3 +52,7 @@ the repository is **public** and the files are on `main`.
 The temporary amount is added to the score, so it also changes the modifier and everything calculated from it. It shows in deep purple under the score (for example `+2 temp` or `-1 temp`). It disappears when set back to 0.
 
 **Movement Enhancements** can have extra lines (use **+Add**), for example boots on one line and a spell on another. The first line and every extra line are added together. The total, shown at the bottom of the box, is added to Normal Move, and Full Move and Limited Move follow it.
+
+**Parchment background.** The parchment texture shows through all boxes, tables and fields. The grey shading is now a light brown tint.
+
+**Portraits.** The sheet shows the character's avatar with an image tag, so a looping GIF avatar animates on the sheet. A WebM or MP4 avatar animates on the token and in the game, but can't play on the sheet; the sheet hides it rather than show a broken image.

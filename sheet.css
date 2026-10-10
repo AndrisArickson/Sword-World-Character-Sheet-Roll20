@@ -2363,3 +2363,91 @@ body .charsheet .box.wide + div.stretch > div:nth-child(even) input.stat-note {
     background: none;
     padding: 0 5px;
 }
+
+/* ===== Parchment everywhere =====
+   Kept as overrides at the end (instead of editing the original rules above) so merges from
+   the upstream sheet stay clean. White fills become transparent so the parchment shows through;
+   the grey shading becomes a light brown tint; white masks behind labels become parchment. */
+body .charsheet input[type=text],
+body .charsheet input[type=number],
+body .charsheet textarea,
+body .charsheet select,
+body .charsheet .grid.lined > .grid > *:not(.header),
+body .charsheet .grid.lined .repcontainer .repitem > div:not(.itemcontrol),
+body .charsheet .col5-abilities.shaded > *,
+body .charsheet .col3-packages > div:nth-child(1),
+body .charsheet .col3-packages > div:nth-child(2),
+body .charsheet .box + div > div:nth-child(even),
+body .charsheet .boxstat,
+body .charsheet .repeating_weapons ~ .repcontainer .repitem div:nth-child(n+11):nth-child(-n+22) * {
+    background: transparent;
+}
+body .charsheet .grid .col5-abilities.shaded {
+    background: linear-gradient(90deg, transparent 79%, rgba(110, 80, 40, 0.12) 79%);
+}
+body .charsheet .classes {
+    background: linear-gradient(90deg, transparent 74%, black 74%, black 74.5%, transparent 74.5%);
+}
+body .charsheet .col3-packages {
+    background: linear-gradient(90deg, transparent 64%, rgba(110, 80, 40, 0.12) 64%);
+}
+body .charsheet .grid.lined .grid.powertable > div:nth-child(26n+1),
+body .charsheet .grid.lined .grid.powertable > div:nth-child(26n+2),
+body .charsheet .grid.lined .grid.powertable > div:nth-child(26n+3),
+body .charsheet .grid.lined .grid.powertable > div:nth-child(26n+4),
+body .charsheet .grid.lined .grid.powertable > div:nth-child(26n+5),
+body .charsheet .grid.lined .grid.powertable > div:nth-child(26n+6),
+body .charsheet .grid.lined .grid.powertable > div:nth-child(26n+7),
+body .charsheet .grid.lined .grid.powertable > div:nth-child(26n+8),
+body .charsheet .grid.lined .grid.powertable > div:nth-child(26n+9),
+body .charsheet .grid.lined .grid.powertable > div:nth-child(26n+10),
+body .charsheet .grid.lined .grid.powertable > div:nth-child(26n+11),
+body .charsheet .grid.lined .grid.powertable > div:nth-child(26n+12),
+body .charsheet .grid.lined .grid.powertable > div:nth-child(26n+13),
+body .charsheet .grid.lined .repeating_powertable ~ .repcontainer .repitem:nth-child(odd) > div,
+body .charsheet .monster > .grid.lined:nth-child(3) .repcontainer .repitem:nth-child(odd) > div,
+body .charsheet .grid.lined .repeating_monsterloot ~ .repcontainer .repitem div:nth-child(2) {
+    background: rgba(110, 80, 40, 0.12);
+}
+body .charsheet .grid.lined .grid.powertable > div:first-child {
+    background: linear-gradient(to top right, rgba(110, 80, 40, 0.12) 0%, rgba(110, 80, 40, 0.12) calc(50% - 0.8px), black 50%, rgba(110, 80, 40, 0.12) calc(50% + 0.8px), rgba(110, 80, 40, 0.12) 100%);
+}
+body .charsheet .grid.lined .grid.powertable > div:nth-child(13) {
+    background: linear-gradient(to top left, rgba(110, 80, 40, 0.12) 0%, rgba(110, 80, 40, 0.12) calc(50% - 0.8px), black 50%, rgba(110, 80, 40, 0.12) calc(50% + 0.8px), rgba(110, 80, 40, 0.12) 100%);
+}
+body .charsheet .monster .grid .grid.divide,
+body .charsheet .monster .grid.lined .repcontainer .repitem > .grid.divide {
+    background: linear-gradient(105deg, transparent 0%, transparent calc(50% - 0.8px), darkgray 50%, transparent calc(50% + 0.8px), transparent 100%);
+}
+body .charsheet .monster > .grid.lined:nth-child(3) .repcontainer .repitem:nth-child(odd) > .grid.divide {
+    background: linear-gradient(105deg, rgba(110, 80, 40, 0.12) 0%, rgba(110, 80, 40, 0.12) calc(50% - 0.8px), darkgray 50%, rgba(110, 80, 40, 0.12) calc(50% + 0.8px), rgba(110, 80, 40, 0.12) 100%);
+}
+body .charsheet .boxstat.nogap:before,
+body .charsheet .boxstat.total .input:not(button),
+body .charsheet .hex:before {
+    background: #f4ecd8 url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/parchment.webp') repeat;
+    background-size: 512px;
+}
+.profile > .label,
+.col5-abilities > * label,
+body .charsheet .box + div:not(.stretch) > div:nth-child(even) label,
+body .charsheet .boxstat:not(.nogap) > label,
+body .charsheet .boxstat .label {
+    text-shadow: 0 0 3px #f4ecd8, 0 0 3px #f4ecd8, 0 0 3px #f4ecd8, 0 0 3px #f4ecd8, 0 0 3px #f4ecd8, 0 0 3px #f4ecd8, 0 0 3px #f4ecd8, 0 0 3px #f4ecd8;
+}
+body .charsheet .editbox {
+    background: #f4ecd8;
+    opacity: 1;
+}
+/* let the parchment fill the sheet window even when a page is short */
+body .charsheet {
+    min-height: 100%;
+    box-sizing: border-box;
+}
+
+/* Roll20 can only show the avatar on the sheet through <img>, which cannot play video.
+   If the avatar is a WebM/MP4 (fine for tokens), hide it here rather than show a broken image. */
+body .charsheet img[src*=".webm" i],
+body .charsheet img[src*=".mp4" i] {
+    display: none;
+}
