@@ -30,3 +30,14 @@ HTML tab and `sheet.css` into the CSS tab.
 
 Roll20 fetches those URLs from the players' browsers, so they only work when
 the repository is **public** and the files are on `main`.
+
+## Changes from the original sheet
+**Permanent bonuses.** Hover a box and click the pencil to add a permanent bonus, as with Fortitude and Willpower. A small `+N` in the corner shows a bonus is set.
+- **Monster Knowledge** has two bonuses:
+  - **Knowledge**, added to both results.
+  - **Weakness**, added only to the weakness-detection result, for items that improve weakness detection.
+
+  The roll uses one 2d6 and posts two results to chat: `Knowledge XX` and `Weakness XX`. With no weakness bonus the two numbers match. A natural 12 still counts as an automatic success (+5) for both. When a weakness bonus is set, the sheet also shows `Weakness XX` under the Monster Knowledge value.
+- **Initiative**: the bonus is included in the Initiative roll.
+- **Base Accuracy** and **Extra Damage**: the bonus is shown on page 2 and added to every weapon's Total Accuracy and Total Extra Damage.
+- **Limited Move**: the default of 3 is replaced by Normal Move ÷ 6, rounded down, plus the bonus.

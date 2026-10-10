@@ -1876,6 +1876,80 @@ body .charsheet .fellow .grid.lined .grid > div > * {
 .toggle-modifier + span:before {
     content: '+ ';
 }
+/* permanent bonuses (Monster Knowledge, Initiative, Limited Move, Base Accuracy, Extra Damage) */
+.toggle-bonus[value='0'] + span,
+.toggle-bonus[value=''] + span {
+    display: none;
+}
+body .charsheet .bonus-note {
+    position: absolute;
+    top: 2px;
+    right: 3px;
+    font-size: 9px;
+    line-height: 100%;
+    color: dimgray;
+    pointer-events: none;
+}
+body .charsheet .bonus-note:before {
+    content: '+';
+}
+body .charsheet .weakness-note {
+    position: absolute;
+    bottom: 1px;
+    left: 0;
+    right: 0;
+    font-size: 9px;
+    line-height: 100%;
+    text-align: center;
+    pointer-events: none;
+}
+body .charsheet .weakness-note:before {
+    content: 'Weakness ';
+}
+.charsheet .grid .editable .editbox .bonus-row {
+    display: grid;
+    align-items: center;
+    font-size: 10px;
+}
+/* the check-package boxes style every odd descendant div; keep the bonus editors out of that */
+body .charsheet .box + div .editable > .editbox {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: auto;
+    padding: 4px 8px 4px 32px;
+    font-size: 12px;
+}
+body .charsheet .box + div .editable > .editbox:after,
+body .charsheet .box + div .editable > .editbox.multi:before,
+body .charsheet .box + div .editable .bonus-row:before,
+body .charsheet .box + div .editable .bonus-row:after {
+    content: none;
+}
+body .charsheet .box + div .editable > .editbox:before {
+    top: 0;
+    left: 20px;
+}
+body .charsheet .box + div .editable > .editbox.multi {
+    padding: 2px 4px 2px 20px;
+    align-content: center;
+    gap: 2px;
+}
+body .charsheet .box + div .editable .bonus-row {
+    position: static;
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding: 0;
+    height: auto;
+}
+body .charsheet .box + div .editable .bonus-row span {
+    height: 12px;
+    line-height: 12px;
+    font-size: 9px;
+    text-align: left;
+}
 .magic-circle .toggle-modifier + span {
     position: absolute;
     bottom: 10px;

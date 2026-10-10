@@ -693,14 +693,23 @@
 
         <div class="grid col2">
             <div>Intelligence Modifier</div>
-            <div class="grid">
-                <button class="input lrg" type="roll" name="roll_monster_knowledge"
-                    value="&{template:swskill} @{roll_template_token} {{reroll=[Reroll](~monster_knowledge)}} {{name=@{character_name}}} {{skill=Monster Knowledge}} {{class=@{monster_knowledge_class}}} {{level=@{monster_knowledge_class_level}}} {{ability=Intelligence}} {{modifier=@{intelligence_modifier}}} {{result=[[[[2d6]]+@{monster_knowledge}]]}} {{raw=$[[0]]}} {{result2=[[[[12+5]]+@{monster_knowledge}]]}}" />
+            <div class="grid editable">
+                <input class="editmode" type="hidden" name="attr_monster_knowledge_edit" value="0" />
+                <input type="checkbox" name="attr_monster_knowledge_edit" value="1" />
+                <div class="editbox multi">
+                    <div class="bonus-row"><span>+ Knowledge</span><input type="number" name="attr_monster_knowledge_mod" value="0" /></div>
+                    <div class="bonus-row"><span>+ Weakness</span><input type="number" name="attr_monster_knowledge_weakness_mod" value="0" /></div>
+                </div>
+                <button class="input lrg" type="action" name="act_monster_knowledge" />
                 <label class="refmark">Monster Knowledge</label>
                 <input type="hidden" name="attr_monster_knowledge_class" />
                 <input type="hidden" name="attr_monster_knowledge_class_level" />
                 <input type="hidden" name="attr_monster_knowledge" />
                 <span class="input lrg" name="attr_monster_knowledge" />
+                <input class="toggle-bonus" type="hidden" name="attr_monster_knowledge_mod" value="0" />
+                <span class="bonus-note" name="attr_monster_knowledge_mod" />
+                <input class="toggle-bonus" type="hidden" name="attr_monster_knowledge_weakness_mod" value="0" />
+                <span class="weakness-note" name="attr_monster_knowledge_weakness" />
             </div>
         </div>
 
@@ -716,7 +725,12 @@
 
         <div class="grid col2">
             <div>Agility Modifier</div>
-            <div class="grid">
+            <div class="grid editable">
+                <input class="editmode" type="hidden" name="attr_initiative_edit" value="0" />
+                <input type="checkbox" name="attr_initiative_edit" value="1" />
+                <div class="editbox">
+                    <input type="number" name="attr_initiative_mod" value="0" />
+                </div>
                 <button class="input lrg" type="roll" name="roll_initiative"
                     value="@{storage_initiative}" />
                 <label class="refmark">Initiative</label>
@@ -724,14 +738,23 @@
                 <input type="hidden" name="attr_initiative_class_level" />
                 <input type="hidden" name="attr_initiative" />
                 <span class="input lrg" name="attr_initiative" />
+                <input class="toggle-bonus" type="hidden" name="attr_initiative_mod" value="0" />
+                <span class="bonus-note" name="attr_initiative_mod" />
             </div>
         </div>
 
         <div class="refmark">Treat as 0 if no levels in relevant classes</div>
-        <div class="grid boxstat move">
+        <div class="grid boxstat move editable">
+            <input class="editmode" type="hidden" name="attr_limited_move_edit" value="0" />
+            <input type="checkbox" name="attr_limited_move_edit" value="1" />
+            <div class="editbox">
+                <input type="number" name="attr_limited_move_mod" value="0" />
+            </div>
             <label>Limited Move</label>
             <input type="hidden" name="attr_limited_move" value="3" />
             <span class="input lrg" name="attr_limited_move" />
+            <input class="toggle-bonus" type="hidden" name="attr_limited_move_mod" value="0" />
+            <span class="bonus-note" name="attr_limited_move_mod" />
         </div>
         <div class="grid boxstat move">
             <label>Normal Move</label>
@@ -771,21 +794,35 @@
 
         <div class="grid col2 nogap stretch">
             <div>Dexterity Modifier</div>
-            <div class="grid">
+            <div class="grid editable">
+                <input class="editmode" type="hidden" name="attr_base_accuracy_edit" value="0" />
+                <input type="checkbox" name="attr_base_accuracy_edit" value="1" />
+                <div class="editbox">
+                    <input type="number" name="attr_base_accuracy_mod" value="0" />
+                </div>
                 <label class="refmark">Base Accuracy:</label>
                 <input type="hidden" name="attr_base_accuracy_class" />
                 <input type="hidden" name="attr_base_accuracy_class_level" />
                 <input type="hidden" name="attr_base_accuracy" />
                 <span class="input" name="attr_base_accuracy" />
+                <input class="toggle-bonus" type="hidden" name="attr_base_accuracy_mod" value="0" />
+                <span class="bonus-note" name="attr_base_accuracy_mod" />
             </div>
 
             <div>Strength Modifier</div>
-            <div class="grid">
+            <div class="grid editable">
+                <input class="editmode" type="hidden" name="attr_extra_damage_edit" value="0" />
+                <input type="checkbox" name="attr_extra_damage_edit" value="1" />
+                <div class="editbox">
+                    <input type="number" name="attr_extra_damage_mod" value="0" />
+                </div>
                 <label class="refmark">Extra Damage:</label>
                 <input type="hidden" name="attr_extra_damage_class" />
                 <input type="hidden" name="attr_extra_damage_class_level" />
                 <input type="hidden" name="attr_extra_damage" />
                 <span class="input" name="attr_extra_damage" />
+                <input class="toggle-bonus" type="hidden" name="attr_extra_damage_mod" value="0" />
+                <span class="bonus-note" name="attr_extra_damage_mod" />
             </div>
         </div>
 
@@ -2365,12 +2402,14 @@
     const correction_list = "abcdef".split("");
     const growth_list = "123456".split("");
     const modifier_list = ability_list.map(i => i + "_mod")
-        .concat(["hp_mod","mp_mod","fortitude_mod","willpower_mod"]);
+        .concat(["hp_mod","mp_mod","fortitude_mod","willpower_mod"])
+        .concat(["monster_knowledge_mod","monster_knowledge_weakness_mod","initiative_mod",
+            "base_accuracy_mod","extra_damage_mod"]);
     const total_list = base_list
         .concat(ability_list.map(i => i + "_mod"))
         .concat(correction_list.map(i => "ability_" + i))
         .concat(growth_list.map(i => "growth_" + i))
-        .concat(["movement_enhancements_modifier"]);
+        .concat(["movement_enhancements_modifier","limited_move_mod"]);
 // class data
     const class_data = {
         "fighter": "Fighter",
@@ -2553,6 +2592,7 @@
             let update = {};
             let counter = 0;
             let move_mod = parseInt(values["movement_enhancements_modifier"])||0;
+            let limited_mod = parseInt(values["limited_move_mod"])||0;
             base_list.forEach(base => {
                 let base_value = parseInt(values[`${base}`])||0;
                 for (let i = 0; i < 2; i++) {
@@ -2571,6 +2611,7 @@
                     if (ability == "agility") {
                         update["normal_move"] = score + move_mod;
                         update["full_move"] = (score + move_mod) * 3;
+                        update["limited_move"] = Math.max(0, Math.floor((score + move_mod) / 6)) + limited_mod;
                     }
                     counter++;
                 }
@@ -2615,6 +2656,8 @@
                 update["hp_max"] = level * 3 + hp + hp_mod;
                 update["mp_max"] = race.toLowerCase() == "grassrunner" ? "None" : wizard_level * 3 + mp + mp_mod;
                 update["fortitude"] = level + fortitude + fort_mod;
+                let acc_mod = parseInt(values["base_accuracy_mod"])||0;
+                let dmg_mod = parseInt(values["extra_damage_mod"])||0;
                 update["willpower"] = level + willpower + wp_mod;
 
                 package_list.forEach(package => {
@@ -2633,7 +2676,7 @@
                     if (package_level > 0) {
                         update[`${package}_class`] = package_class;
                         update[`${package}_class_level`] = package_level;
-                        package_level += package_ability;
+                        package_level += (parseInt(package_ability)||0) + (parseInt(values[`${package}_mod`])||0);
                         update[`${package}`] = package_level;
                     } else {
                         if (zero) {
@@ -2645,6 +2688,9 @@
                         update[`${package}_class_level`] = "";
                     }
                 });
+
+                update["monster_knowledge_weakness"] = update["monster_knowledge"] === "" ? "" :
+                    update["monster_knowledge"] + (parseInt(values["monster_knowledge_weakness_mod"])||0);
 
                 class_list.forEach(v => {
                     if (v in magic_power_data) {
@@ -2684,8 +2730,8 @@
                                 w_class == "crossbow" && w_dmg_level > 0 ? w_dmg_level :
                                 w_class == "dhunter" && w_dmg_level > 0 ? spirit + w_dmg_level :
                                 w_dmg_level > 0 ? strength + w_dmg_level : 0;
-                            update2[`repeating_weapons_${id}_weapon_total_accuracy`] = w_accuracy;
-                            update2[`repeating_weapons_${id}_weapon_total_extra_damage`] = w_damage;
+                            update2[`repeating_weapons_${id}_weapon_total_accuracy`] = w_accuracy + acc_mod;
+                            update2[`repeating_weapons_${id}_weapon_total_extra_damage`] = w_damage + dmg_mod;
                             setAttrs(update2, {silent:true});
                         });
                     }
@@ -2699,7 +2745,7 @@
                 "repeating_weapons_weapon_extra_damage","fighter_level","grappler_level",
                 "fencer_level","marksman_level","bdancer_level","artificer_level",
                 "dhunter_level","strength_modifier","dexterity_modifier","spirit_modifier",
-                "intelligence_modifier"], function(values) {
+                "intelligence_modifier","base_accuracy_mod","extra_damage_mod"], function(values) {
             let update = {};
             let dexterity = parseInt(values["dexterity_modifier"])||0;
             let strength = parseInt(values["strength_modifier"])||0;
@@ -2720,8 +2766,8 @@
                 w_class == "crossbow" && w_dmg_level > 0 ? w_dmg_level :
                 w_class == "dhunter" && w_dmg_level > 0 ? spirit + w_dmg_level :
                 w_dmg_level > 0 ? strength + w_dmg_level : 0;
-            update["repeating_weapons_weapon_total_accuracy"] = w_accuracy;
-            update["repeating_weapons_weapon_total_extra_damage"] = w_damage;
+            update["repeating_weapons_weapon_total_accuracy"] = w_accuracy + (parseInt(values["base_accuracy_mod"])||0);
+            update["repeating_weapons_weapon_total_extra_damage"] = w_damage + (parseInt(values["extra_damage_mod"])||0);
             setAttrs(update);
         });
     });
@@ -2840,6 +2886,22 @@
                         finishRoll(results2.rollId, {});
                     });
                 }
+            });
+        });
+    });
+
+    // Monster Knowledge rolls one 2d6 and reports two results: Knowledge, and
+    // Weakness (Knowledge plus the separate weakness-detection bonus).
+    on("clicked:monster_knowledge", function() {
+        getAttrs(["monster_knowledge","monster_knowledge_weakness_mod"], function(values) {
+            if (values["monster_knowledge"] === "" || values["monster_knowledge"] === undefined) return;
+            const knowledge = parseInt(values["monster_knowledge"])||0;
+            const weakness_mod = parseInt(values["monster_knowledge_weakness_mod"])||0;
+            startRoll(`&{template:swskill} @{roll_template_token} {{reroll=[Reroll](~monster_knowledge)}} {{name=@{character_name}}} {{skill=Monster Knowledge}} {{class=@{monster_knowledge_class}}} {{level=@{monster_knowledge_class_level}}} {{ability=Intelligence}} {{modifier=@{intelligence_modifier}}} {{result=[[[[2d6]]+${knowledge}]]}} {{raw=$[[0]]}} {{result2=[[[[12+5]]+${knowledge}]]}} {{knowledge=1}} {{weakness=[[0]]}} {{weakness2=[[0]]}}`, (results) => {
+                finishRoll(results.rollId, {
+                    "weakness": results.results.result.result + weakness_mod,
+                    "weakness2": results.results.result2.result + weakness_mod
+                });
             });
         });
     });
@@ -3311,6 +3373,7 @@
         {{^simple}}
             {{#rollTotal() raw 12}}
                 <p>
+                    {{#knowledge}}Knowledge {{/knowledge}}
                     {{#computed::result2}}{{computed::result2}}{{/computed::result2}}
                     {{^computed::result2}}
                         {{#computed::result}}{{computed::result}}{{/computed::result}}
@@ -3321,6 +3384,7 @@
                     {{/computed::result2}}
                     {{#target}} vs. {{target}}{{/target}}
                 </p>
+                {{#knowledge}}<p>Weakness {{computed::weakness2}}</p>{{/knowledge}}
                 {{#computed::result2}}<p class="success">Automatic Success!</p>{{/computed::result2}}
                 {{^computed::result2}}
                     {{#result2}}<p class="success">Automatic Success!</p>{{/result2}}
@@ -3334,10 +3398,12 @@
                 {{/rollTotal() raw 2}}
                 {{#^rollTotal() raw 2}}
                     <p>
+                        {{#knowledge}}Knowledge {{/knowledge}}
                         {{#computed::result}}{{computed::result}}{{/computed::result}}
                         {{^computed::result}}{{result}}{{/computed::result}}
                         {{#target}} vs. {{target}}{{/target}}
                     </p>
+                    {{#knowledge}}<p>Weakness {{computed::weakness}}</p>{{/knowledge}}
                     {{#target}}
                         {{#computed::result}}
                             {{#rollLess() computed::result target}}
