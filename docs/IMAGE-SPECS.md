@@ -85,3 +85,7 @@ Frame thickness was raised to show more of the new corner art: the guild box bor
 ## Class icons (10 Oct 2026)
 
 The class list uses bold emblem icons from `images/class-icons/` (29 files, 256 x 256, shown at 20 px), coloured by class type: crimson for warrior classes, sapphire for wizard classes, bronze for the rest. The earlier class portraits stay in `images/icons/` for other uses.
+
+## Race icons (10 Oct 2026)
+
+The race field uses bust emblems from `images/race-icons/` (47 files, 256 x 256, shown at 64 px), coloured by race group: green for common races, violet for rare races (including Noble Elf), rust for barbarous races. All six Nightmare variants share `race-nightmare.webp`. The earlier race portraits stay in `images/icons/`.
