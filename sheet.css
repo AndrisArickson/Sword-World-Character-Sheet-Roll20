@@ -2423,7 +2423,12 @@ body .charsheet .monster > .grid.lined:nth-child(3) .repcontainer .repitem:nth-c
     background: linear-gradient(105deg, rgba(110, 80, 40, 0.12) 0%, rgba(110, 80, 40, 0.12) calc(50% - 0.8px), darkgray 50%, rgba(110, 80, 40, 0.12) calc(50% + 0.8px), rgba(110, 80, 40, 0.12) 100%);
 }
 body .charsheet .boxstat.nogap:before,
+body .charsheet .boxstat.total input:not(button),
 body .charsheet .boxstat.total .input:not(button),
+body .charsheet .repeating_weapons ~ .repcontainer .repitem div:nth-child(9) span,
+body .charsheet .repeating_weapons ~ .repcontainer .repitem div:nth-child(24) span,
+body .charsheet .repeating_weapons ~ .repcontainer .repitem span[name="attr_weapon_total_accuracy"],
+body .charsheet .repeating_weapons ~ .repcontainer .repitem span[name="attr_weapon_total_extra_damage"],
 body .charsheet .hex:before {
     background: #f4ecd8 url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/parchment.webp') repeat;
     background-size: 512px;
