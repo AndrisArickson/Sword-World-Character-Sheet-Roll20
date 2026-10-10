@@ -6,6 +6,11 @@ body .charsheet * {
     font-family: 'Noto Sans', serif;
 }
 
+body .charsheet {
+    background: #f4ecd8 url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/parchment.webp') repeat;
+    background-size: 512px;
+}
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     display: none;
@@ -652,18 +657,19 @@ body .charsheet .monster div:not(.repcontrol) > button:hover:before,
 
 .guild {
     position: relative;
-    border: 20px solid transparent;
-    padding: 10px;
+    border: 30px solid transparent;
+    padding: 4px;
     border-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/border.webp') 130 stretch;
 }
 .page1 .guild:before {
     content: '';
     position: absolute;
-    background: white;
-    right: -20px;
-    bottom: -20px;
-    width: 30px;
-    height: 30px;
+    background: #f4ecd8 url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/parchment.webp') repeat;
+    background-size: 512px;
+    right: -30px;
+    bottom: -30px;
+    width: 40px;
+    height: 40px;
 }
 .guild .alevel {
     position: relative;
@@ -1898,7 +1904,7 @@ body .charsheet .fellow .grid.lined .grid > div > * {
 .sheet-rolltemplate-swskill .sheet-container,
 .sheet-rolltemplate-swdamage .sheet-container,
 .sheet-rolltemplate-swinfo .sheet-container {
-    border: 20px solid transparent;
+    border: 26px solid transparent;
     border-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/border2.webp') 130 stretch;
     display: grid;
     grid-template-columns: 1fr;
@@ -2122,3 +2128,86 @@ body .charsheet .fellow .grid.lined .grid > div > * {
     content: '※';
     font-family: cursive;
 }
+
+/* ===== Art: divider, race portrait, class icons ===== */
+.charsheet .divider {
+    grid-column: 1 / -1;
+    height: 24px;
+    background: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/divider.webp') center center no-repeat;
+    background-size: contain;
+}
+.charsheet .race-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.charsheet .race-row > .grid {
+    flex: 1;
+}
+body .charsheet .race-row .race-icon {
+    display: none;
+    width: 64px;
+    height: 64px;
+    flex: none;
+    background-size: contain;
+}
+.charsheet .race-icon-flag[value='abyssborn'] + .race-icon { display: block; background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/icons/race-abyssborn.webp'); }
+.charsheet .race-icon-flag[value='alv'] + .race-icon { display: block; background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/icons/race-alv.webp'); }
+.charsheet .race-icon-flag[value='basilisk-weakling'] + .race-icon { display: block; background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/icons/race-basilisk-weakling.webp'); }
+.charsheet .race-icon-flag[value='dark-dwarf'] + .race-icon { display: block; background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/icons/race-dark-dwarf.webp'); }
+.charsheet .race-icon-flag[value='dwarf'] + .race-icon { display: block; background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/icons/race-dwarf.webp'); }
+.charsheet .race-icon-flag[value='elf'] + .race-icon { display: block; background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/icons/race-elf.webp'); }
+.charsheet .race-icon-flag[value='fey'] + .race-icon { display: block; background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/icons/race-fey.webp'); }
+.charsheet .race-icon-flag[value='fluorite'] + .race-icon { display: block; background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/icons/race-fluorite.webp'); }
+.charsheet .race-icon-flag[value='garuda-weakling'] + .race-icon { display: block; background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/icons/race-garuda-weakling.webp'); }
+.charsheet .race-icon-flag[value='grassrunner'] + .race-icon { display: block; background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/icons/race-grassrunner.webp'); }
+.charsheet .race-icon-flag[value='human'] + .race-icon { display: block; background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/icons/race-human.webp'); }
+.charsheet .race-icon-flag[value='leprechaun'] + .race-icon { display: block; background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/icons/race-leprechaun.webp'); }
+.charsheet .race-icon-flag[value='lildraken'] + .race-icon { display: block; background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/icons/race-lildraken.webp'); }
+.charsheet .race-icon-flag[value='lykant'] + .race-icon { display: block; background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/icons/race-lykant.webp'); }
+.charsheet .race-icon-flag[value='meria'] + .race-icon { display: block; background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/icons/race-meria.webp'); }
+.charsheet .race-icon-flag[value='miakis'] + .race-icon { display: block; background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/icons/race-miakis.webp'); }
+.charsheet .race-icon-flag[value='minotaur-weakling'] + .race-icon { display: block; background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/icons/race-minotaur-weakling.webp'); }
+.charsheet .race-icon-flag[value='newman'] + .race-icon { display: block; background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/icons/race-newman.webp'); }
+.charsheet .race-icon-flag[value='nightmare'] + .race-icon { display: block; background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/icons/race-nightmare.webp'); }
+.charsheet .race-icon-flag[value='runefolk'] + .race-icon { display: block; background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/icons/race-runefolk.webp'); }
+.charsheet .race-icon-flag[value='shadow'] + .race-icon { display: block; background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/icons/race-shadow.webp'); }
+.charsheet .race-icon-flag[value='soleil'] + .race-icon { display: block; background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/icons/race-soleil.webp'); }
+.charsheet .race-icon-flag[value='spriggan'] + .race-icon { display: block; background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/icons/race-spriggan.webp'); }
+.charsheet .race-icon-flag[value='tabbit'] + .race-icon { display: block; background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/icons/race-tabbit.webp'); }
+.charsheet .race-icon-flag[value='tannoz-weakling'] + .race-icon { display: block; background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/icons/race-tannoz-weakling.webp'); }
+.charsheet .race-icon-flag[value='tiens'] + .race-icon { display: block; background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/icons/race-tiens.webp'); }
+.charsheet .race-icon-flag[value='valkyrie'] + .race-icon { display: block; background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/icons/race-valkyrie.webp'); }
+.charsheet .class-icon:before {
+    content: '';
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin-right: 5px;
+    vertical-align: -4px;
+    background-size: contain;
+}
+.charsheet .cls-fighter:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/icons/class-fighter.webp'); }
+.charsheet .cls-grappler:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/icons/class-grappler.webp'); }
+.charsheet .cls-battle-dancer:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/icons/class-battle-dancer.webp'); }
+.charsheet .cls-fencer:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/icons/class-fencer.webp'); }
+.charsheet .cls-marksman:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/icons/class-marksman.webp'); }
+.charsheet .cls-sorcerer:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/icons/class-sorcerer.webp'); }
+.charsheet .cls-conjurer:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/icons/class-conjurer.webp'); }
+.charsheet .cls-priest:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/icons/class-priest.webp'); }
+.charsheet .cls-artificer:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/icons/class-artificer.webp'); }
+.charsheet .cls-fairy-tamer:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/icons/class-fairy-tamer.webp'); }
+.charsheet .cls-druid:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/icons/class-druid.webp'); }
+.charsheet .cls-daemonologist:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/icons/class-daemonologist.webp'); }
+.charsheet .cls-abyss-gazer:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/icons/class-abyss-gazer.webp'); }
+.charsheet .cls-bibliomancer:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/icons/class-bibliomancer.webp'); }
+.charsheet .cls-scout:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/icons/class-scout.webp'); }
+.charsheet .cls-ranger:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/icons/class-ranger.webp'); }
+.charsheet .cls-sage:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/icons/class-sage.webp'); }
+.charsheet .cls-enhancer:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/icons/class-enhancer.webp'); }
+.charsheet .cls-bard:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/icons/class-bard.webp'); }
+.charsheet .cls-rider:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/icons/class-rider.webp'); }
+.charsheet .cls-alchemist:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/icons/class-alchemist.webp'); }
+.charsheet .cls-geomancer:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/icons/class-geomancer.webp'); }
+.charsheet .cls-tactician:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/icons/class-tactician.webp'); }
+.charsheet .cls-dark-hunter:before { background-image: url('https://raw.githubusercontent.com/AndrisArickson/Sword-World-Character-Sheet-Roll20/main/images/icons/class-dark-hunter.webp'); }

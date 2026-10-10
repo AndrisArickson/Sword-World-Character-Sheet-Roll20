@@ -176,6 +176,9 @@
                     <input type="text" spellcheck="false" name="attr_player_name" />
                 </div>
 
+                <div class="race-row">
+                <input class="race-icon-flag" type="hidden" name="attr_race_icon" value="" />
+                <div class="race-icon"></div>
                 <div class="grid col3-race vcol">
                     <label>Race</label>
                     <input type="text" spellcheck="false" list="race" name="attr_race" />
@@ -220,6 +223,7 @@
                     <label>Gender</label>
                     <input type="text" spellcheck="false" name="attr_gender" />
                 </div>
+                </div>
 
                 <label>Racial Abilities</label>
                 <div class="auto-expand">
@@ -230,6 +234,8 @@
 
             <h1>Sword World 2.5</h1>
         </div>
+
+        <div class="divider"></div>
 
         <div class="grid nogap">
             <div class="grid col5-abilities">
@@ -431,59 +437,59 @@
                     <div class="header">Level</div>
 
                     <input class="toggle-class" type="hidden" name="attr_fighter_level" value="0" />
-                    <div class="input">Fighter</div>
+                    <div class="input class-icon cls-fighter">Fighter</div>
                     <div><input type="number" name="attr_fighter_level" /></div>
 
                     <input class="toggle-class" type="hidden" name="attr_grappler_level" value="0" />
-                    <div class="input">Grappler</div>
+                    <div class="input class-icon cls-grappler">Grappler</div>
                     <div><input type="number" name="attr_grappler_level" /></div>
 
                     <input class="toggle-class" type="hidden" name="attr_bdancer_level" value="0" />
-                    <div class="input">Battle Dancer</div>
+                    <div class="input class-icon cls-battle-dancer">Battle Dancer</div>
                     <div><input type="number" name="attr_bdancer_level" /></div>
 
                     <input class="toggle-class" type="hidden" name="attr_fencer_level" value="0" />
-                    <div class="input">Fencer</div>
+                    <div class="input class-icon cls-fencer">Fencer</div>
                     <div><input type="number" name="attr_fencer_level" /></div>
 
                     <input class="toggle-class" type="hidden" name="attr_marksman_level" value="0" />
-                    <div class="input">Marksman</div>
+                    <div class="input class-icon cls-marksman">Marksman</div>
                     <div><input type="number" name="attr_marksman_level" /></div>
 
                     <input class="toggle-class" type="hidden" name="attr_sorcerer_level" value="0" />
-                    <div class="input">Sorcerer</div>
+                    <div class="input class-icon cls-sorcerer">Sorcerer</div>
                     <div><input type="number" name="attr_sorcerer_level" /></div>
 
                     <input class="toggle-class" type="hidden" name="attr_conjurer_level" value="0" />
-                    <div class="input">Conjurer</div>
+                    <div class="input class-icon cls-conjurer">Conjurer</div>
                     <div><input type="number" name="attr_conjurer_level" /></div>
 
                     <input class="toggle-class" type="hidden" name="attr_priest_level" value="0" />
-                    <div class="input">Priest</div>
+                    <div class="input class-icon cls-priest">Priest</div>
                     <div><input type="number" name="attr_priest_level" /></div>
 
                     <input class="toggle-class" type="hidden" name="attr_artificer_level" value="0" />
-                    <div class="input">Artificer</div>
+                    <div class="input class-icon cls-artificer">Artificer</div>
                     <div><input type="number" name="attr_artificer_level" /></div>
 
                     <input class="toggle-class" type="hidden" name="attr_fairy_tamer_level" value="0" />
-                    <div class="input">Fairy Tamer</div>
+                    <div class="input class-icon cls-fairy-tamer">Fairy Tamer</div>
                     <div><input type="number" name="attr_fairy_tamer_level" /></div>
 
                     <input class="toggle-class" type="hidden" name="attr_druid_level" value="0" />
-                    <div class="input">Druid</div>
+                    <div class="input class-icon cls-druid">Druid</div>
                     <div><input type="number" name="attr_druid_level" /></div>
 
                     <input class="toggle-class" type="hidden" name="attr_warlock_level" value="0" />
-                    <div class="input">Daemonologist</div>
+                    <div class="input class-icon cls-daemonologist">Daemonologist</div>
                     <div><input type="number" name="attr_warlock_level" /></div>
                     
                     <input class="toggle-class" type="hidden" name="attr_gazer_level" value="0" />
-                    <div class="input">Abyss Gazer</div>
+                    <div class="input class-icon cls-abyss-gazer">Abyss Gazer</div>
                     <div><input type="number" name="attr_gazer_level" /></div>
 
                     <input class="toggle-class" type="hidden" name="attr_bibliomancer_level" value="0" />
-                    <div class="input">Bibliomancer</div>
+                    <div class="input class-icon cls-bibliomancer">Bibliomancer</div>
                     <div><input type="number" name="attr_bibliomancer_level" /></div>
 
                     <input class="toggle-class" type="hidden" name="attr_arcanist_level" value="0" />
@@ -491,43 +497,43 @@
                     <div class="aog-class"><input type="number" name="attr_arcanist_level" /></div>
 
                     <input class="toggle-class" type="hidden" name="attr_scout_level" value="0" />
-                    <div class="input">Scout</div>
+                    <div class="input class-icon cls-scout">Scout</div>
                     <div><input type="number" name="attr_scout_level" /></div>
 
                     <input class="toggle-class" type="hidden" name="attr_ranger_level" value="0" />
-                    <div class="input">Ranger</div>
+                    <div class="input class-icon cls-ranger">Ranger</div>
                     <div><input type="number" name="attr_ranger_level" /></div>
 
                     <input class="toggle-class" type="hidden" name="attr_sage_level" value="0" />
-                    <div class="input">Sage</div>
+                    <div class="input class-icon cls-sage">Sage</div>
                     <div><input type="number" name="attr_sage_level" /></div>
 
                     <input class="toggle-class" type="hidden" name="attr_enhancer_level" value="0" />
-                    <div class="input">Enhancer</div>
+                    <div class="input class-icon cls-enhancer">Enhancer</div>
                     <div><input type="number" name="attr_enhancer_level" /></div>
 
                     <input class="toggle-class" type="hidden" name="attr_bard_level" value="0" />
-                    <div class="input">Bard</div>
+                    <div class="input class-icon cls-bard">Bard</div>
                     <div><input type="number" name="attr_bard_level" /></div>
 
                     <input class="toggle-class" type="hidden" name="attr_rider_level" value="0" />
-                    <div class="input">Rider</div>
+                    <div class="input class-icon cls-rider">Rider</div>
                     <div><input type="number" name="attr_rider_level" /></div>
 
                     <input class="toggle-class" type="hidden" name="attr_alchemist_level" value="0" />
-                    <div class="input">Alchemist</div>
+                    <div class="input class-icon cls-alchemist">Alchemist</div>
                     <div><input type="number" name="attr_alchemist_level" /></div>
 
                     <input class="toggle-class" type="hidden" name="attr_geomancer_level" value="0" />
-                    <div class="input">Geomancer</div>
+                    <div class="input class-icon cls-geomancer">Geomancer</div>
                     <div><input type="number" name="attr_geomancer_level" /></div>
 
                     <input class="toggle-class" type="hidden" name="attr_tactician_level" value="0" />
-                    <div class="input">Tactician</div>
+                    <div class="input class-icon cls-tactician">Tactician</div>
                     <div><input type="number" name="attr_tactician_level" /></div>
 
                     <input class="toggle-class" type="hidden" name="attr_dhunter_level" value="0" />
-                    <div class="input">Dark Hunter</div>
+                    <div class="input class-icon cls-dark-hunter">Dark Hunter</div>
                     <div><input type="number" name="attr_dhunter_level" /></div>
 
                     <input class="toggle-class" type="hidden" name="attr_heritor_level" value="0" />
@@ -792,6 +798,8 @@
         </div>
     </div>
 
+        <div class="divider"></div>
+
     <div class="grid nogap lined">
         <div class="grid col-weapons nogap">
             <div class="header">Weapon Name/Notes</div>
@@ -886,6 +894,8 @@
             <textarea spellcheck="false" name="attr_accuracy_enhancements"></textarea>
         </div>
     </div>
+
+        <div class="divider"></div>
 
     <div class="grid col2-locdef">
         <div class="grid nogap lined">
@@ -1251,6 +1261,8 @@
         </div>
     </div>
 
+        <div class="divider"></div>
+
     <div class="grid col4">
         <div class="grid col2 nogap editable">
             <input class="editmode" type="hidden" name="attr_hp_edit" value="0" />
@@ -1323,6 +1335,8 @@
             <input class="toggle-modifier" type="hidden" name="attr_willpower_mod" value="0" />
             <span name="attr_willpower_mod" /></div>
     </div>
+
+        <div class="divider"></div>
 
     <div class="grid col2-monitems">
         <div class="grid smrowgap">
@@ -3149,6 +3163,21 @@
     };
 
     on("sheet:opened change:character_name change:repeating_weapons change:repeating_powertable", actionCallUpdate);
+
+    const race_icons = ["abyssborn", "alv", "basilisk-weakling", "dark-dwarf", "dwarf", "elf", "fey", "fluorite",
+        "garuda-weakling", "grassrunner", "human", "leprechaun", "lildraken", "lykant", "meria", "miakis",
+        "minotaur-weakling", "newman", "nightmare", "runefolk", "shadow", "soleil", "spriggan", "tabbit",
+        "tannoz-weakling", "tiens", "valkyrie"];
+
+    on("sheet:opened change:race", function() {
+        getAttrs(["race", "race_icon"], function(values) {
+            let slug = (values["race"] || "").trim().toLowerCase();
+            if (slug.startsWith("nightmare")) slug = "nightmare";
+            slug = slug.replace(/[^a-z]+/g, "-").replace(/^-|-$/g, "");
+            const icon = race_icons.includes(slug) ? slug : "";
+            if (icon !== values["race_icon"]) setAttrs({race_icon: icon}, {silent: true});
+        });
+    });
 
     /* ===== PARAMETERS ==========
     destinations = the name of the attribute that stores the total quantity
