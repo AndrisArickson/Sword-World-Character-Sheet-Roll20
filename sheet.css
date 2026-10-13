@@ -2475,7 +2475,40 @@ body .charsheet {
 
 /* Roll20 can only show the avatar on the sheet through <img>, which cannot play video.
    If the avatar is a WebM/MP4 (fine for tokens), hide it here rather than show a broken image. */
-body .charsheet img[src*=".webm" i],
-body .charsheet img[src*=".mp4" i] {
+body .charsheet img[src*=".webm"],
+body .charsheet img[src*=".WEBM"],
+body .charsheet img[src*=".mp4"],
+body .charsheet img[src*=".MP4"] {
     display: none;
+}
+
+/* chat cards: smaller heading, bigger results */
+.sheet-rolltemplate-swskill .sheet-container h1,
+.sheet-rolltemplate-swdamage .sheet-container h1,
+.sheet-rolltemplate-swinfo .sheet-container h1,
+.sheet-rolltemplate-swskill .sheet-container h1 *,
+.sheet-rolltemplate-swdamage .sheet-container h1 *,
+.sheet-rolltemplate-swinfo .sheet-container h1 * {
+    font-size: 16px;
+    line-height: 20px;
+}
+.sheet-rolltemplate-swskill .sheet-container p,
+.sheet-rolltemplate-swdamage .sheet-container p {
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: bold;
+}
+.sheet-rolltemplate-swskill .sheet-container .inlinerollresult,
+.sheet-rolltemplate-swdamage .sheet-container .inlinerollresult {
+    font-size: 30px;
+    line-height: 34px;
+    font-weight: bold;
+}
+.sheet-rolltemplate-swskill .sheet-container .sheet-refmark,
+.sheet-rolltemplate-swskill .sheet-container .sheet-refmark .inlinerollresult,
+.sheet-rolltemplate-swdamage .sheet-container .sheet-refmark,
+.sheet-rolltemplate-swdamage .sheet-container .sheet-refmark .inlinerollresult {
+    font-size: 11px;
+    line-height: 14px;
+    font-weight: normal;
 }
