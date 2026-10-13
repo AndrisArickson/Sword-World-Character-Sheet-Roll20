@@ -57,4 +57,5 @@ upstream's change on top of it.
 | Base Accuracy / Extra Damage notes | `*_note` inputs | `input.stat-note` |
 | Credits | – (`sheet.json` authors and instructions) | – |
 | Parchment behind everything; video avatars hidden | – | `/* ===== Parchment everywhere` block at the end (overrides only) |
-| Chat cards: smaller heading, bigger results | – | `/* chat cards: smaller heading, bigger results */` block at the end |
+| Chat cards: smaller heading, bigger results, half-size portrait | – | `/* chat cards: ... */` and `/* chat-card portrait at half size */` blocks at the end |
+| Portrait in chat rolls can be switched off | `attr_roll_portrait` switch on the Settings tab; `character_token` worker | – |

@@ -2425,6 +2425,12 @@
         <option value="2">Fellow</option>
     </select>
 
+    <div class="label slot1">Show Portrait in Chat Rolls</div>
+    <label class="switch">
+        <input type="checkbox" name="attr_roll_portrait" value="1" checked />
+        <span class="slider"></span>
+    </label>
+
     <div class="label monster0 slot1">Show 2.0 Mystic Class</div>
     <label class="switch monster0">
         <input type="checkbox" name="attr_sw20" value="1" />
@@ -2636,7 +2642,7 @@
         });
     });
 
-    on("sheet:opened change:character_token", function(eventInfo) {
+    on("sheet:opened change:character_token change:roll_portrait", function(eventInfo) {
         let update = {
             roll_template_token: "",
             display_token: 0,
@@ -2647,10 +2653,12 @@
             storage_monster_fortitude: storage["monster_fortitude"],
             storage_monster_willpower: storage["monster_willpower"]
         };
-        getAttrs(["character_token"], function(values) {
-            let character_token = values.character_token;
+        getAttrs(["character_token","roll_portrait"], function(values) {
+            let character_token = values.character_token || "";
+            // "Show Portrait in Chat Rolls" (Settings) is on unless switched off
+            let show_portrait = values.roll_portrait !== "0";
 
-            if (character_token.length > 0 &&
+            if (show_portrait && character_token.length > 0 &&
                 character_token.substring(character_token.length - 4, character_token.length - 3) !== '.') {
 
                 character_token += ".png";
