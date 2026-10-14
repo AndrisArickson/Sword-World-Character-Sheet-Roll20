@@ -55,6 +55,6 @@ The temporary amount is added to the score, so it also changes the modifier and 
 
 **Parchment background.** The parchment texture shows through all boxes, tables and fields. The grey shading is now a light brown tint.
 
-**Portraits.** The sheet shows the character's avatar with an image tag, so a looping GIF avatar animates on the sheet. A WebM or MP4 avatar animates on the token and in the game, but can't play on the sheet; the sheet hides it rather than show a broken image.
+**Portraits.** The sheet shows the character's avatar with an image tag, so a looping GIF avatar animates on the sheet. A WebM or MP4 avatar animates on the token and in the game, but can't play on the sheet.
 
 **Chat portrait.** The character's portrait on chat roll cards is half its former size (35 px). Switch **Show Portrait in Chat Rolls** off on the Settings tab to leave it out of rolls.

@@ -566,8 +566,7 @@ body .charactersheet .page2:after,
 body .charactersheet .monster:after,
 body .charactersheet .fellow:after,
 body .charactersheet .settings:after {
-    content: 'Sword World 2.5 Character Sheet Ver.0.177.2 by Robert Burson & Chris Casey (miriable) | https://app.roll20.net/users/39343/miriable\A Fork 1.0 (based on Ver.0.177.2) by AndrisArickson | https://github.com/AndrisArickson/Sword-World-Character-Sheet-Roll20';
-    white-space: pre-line;
+    content: 'Sword World 2.5 Character Sheet Ver.0.177.2 by Robert Burson and Chris Casey (miriable) | https://app.roll20.net/users/39343/miriable | Fork 1.0 (based on Ver.0.177.2) by AndrisArickson | https://github.com/AndrisArickson/Sword-World-Character-Sheet-Roll20';
     text-align: right;
     font-size: 8px;
 }
@@ -2467,20 +2466,12 @@ body .charsheet .editbox {
     background: #f4ecd8;
     opacity: 1;
 }
-/* let the parchment fill the sheet window even when a page is short */
+/* let the parchment fill the sheet on short pages */
 body .charsheet {
     min-height: 100%;
     box-sizing: border-box;
 }
 
-/* Roll20 can only show the avatar on the sheet through <img>, which cannot play video.
-   If the avatar is a WebM/MP4 (fine for tokens), hide it here rather than show a broken image. */
-body .charsheet img[src*=".webm"],
-body .charsheet img[src*=".WEBM"],
-body .charsheet img[src*=".mp4"],
-body .charsheet img[src*=".MP4"] {
-    display: none;
-}
 
 /* chat cards: smaller heading, bigger results */
 .sheet-rolltemplate-swskill .sheet-container h1,

@@ -56,6 +56,14 @@ upstream's change on top of it.
 | Multi-line Movement Enhancements | `repeating_moveenh`; `sumMoveEnhancements` worker; `movement_enhancements_total` | `.move-enh` |
 | Base Accuracy / Extra Damage notes | `*_note` inputs | `input.stat-note` |
 | Credits | – (`sheet.json` authors and instructions) | – |
-| Parchment behind everything; video avatars hidden | – | `/* ===== Parchment everywhere` block at the end (overrides only) |
+| Parchment behind everything | – | `/* ===== Parchment everywhere` block at the end (overrides only) |
 | Chat cards: smaller heading, bigger results, half-size portrait | – | `/* chat cards: ... */` and `/* chat-card portrait at half size */` blocks at the end |
 | Portrait in chat rolls can be switched off | `attr_roll_portrait` switch on the Settings tab; `character_token` worker | – |
+
+## Roll20's CSS filter (read before editing sheet.css)
+Roll20 scans the whole stylesheet and silently drops ALL roll-template (chat card) styling if it finds a
+"potential security violation". Keep these out of sheet.css, comments included:
+- banned words, even inside comments: `window`, `eval`, `cookie`, `this`, `behavior`/`behaviour`, `data:`
+- HTML tags such as `<img>`
+- escaped characters in `content:` (for example `\A` or `\2713`); type the character itself instead
+- non-ASCII characters beyond those the original sheet already uses
